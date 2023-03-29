@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ page import=java.util.* %>
+	pageEncoding="UTF-8"%>
+<%@ page import="java.util.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,27 +8,30 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<<h1>form 요소 연습</h1>
+	<h1>form 요소 연습</h1>
 	<form>
-		<input type="number" name="num1" value="100" />
-		<input type="submit" value="+" />
-		<input type="number" name="num2" value="200" />
+		<input type="number" name="num1" value="100" /> <input type="submit"
+			value="+" /> <input type="number" name="num2" value="200" />
 	</form>
 	<hr />
 	<!-- num1과 num2 를 더한 값 -->
 	<%
 	String num1 = request.getParameter("num1");
-	String num2 = request.getParameter("num2");	
-	
-	if(num1 == null || num2 == null){
+	String num2 = request.getParameter("num2");
+	int num11 = Integer.parseInt(num1);
+	int num22 = Integer.parseInt(num2);
+
+	if (num1 == null || num2 == null) {
 		out.print("<h3>값을 입력해주세요</h3>");
-	} else if(num1.isEmpty() || num2.isEmpty()){
+	} else if (num1.isEmpty() || num2.isEmpty()) {
 		out.print("<h3>값을 입력해주세요");
-	} else{
+	} else {
+		out.print(num1 + "+" + num2);
+	}
 	%>
-	<h3><%= num1 %> + <%= num2 %> = </h3>
-	
-	
+
+
+
 
 </body>
 </html>
